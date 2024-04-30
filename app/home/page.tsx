@@ -1,23 +1,12 @@
 "use client";
 
 import ProtectedRoute from "@/Provider/ProtectedRoute";
-import useAuth from "@/lib/hooks/useAuth";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function HomaPage() {
-  const { user: UserData, logout } = useAuth();
-  const router = useRouter();
   return (
     <ProtectedRoute>
-      <button
-        onClick={() => {
-          logout();
-          router.push("/login");
-        }}
-      >
-        logout
-      </button>
-      <div>Home</div>;
+      <Link href="/deposit_info">Deposit Info</Link>;
     </ProtectedRoute>
   );
 }

@@ -84,7 +84,7 @@ export default function LoginForm() {
 
   return (
     // create a basic login form with username and password fields and onsubmit function
-    <div className="flex flex-col items-center justify-center h-screen text-black">
+    <div className="flex flex-col items-center justify-center h-screen text-black mt-[-40px]">
       <div className="w-96 p-4 bg-white rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold text-blue-600">
           {loading ? "Loading..." : "Login to Shomonnoi"}
