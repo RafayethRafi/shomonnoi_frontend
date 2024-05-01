@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Login - QueryHub",
-  description: "Login to your account to continue with QueryHub",
+  title: "Shomonnoi",
 };
 
 export default function Login() {
