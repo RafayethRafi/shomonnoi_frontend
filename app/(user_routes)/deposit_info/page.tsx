@@ -3,7 +3,6 @@ import useAuth from "@/lib/hooks/useAuth";
 import { useState } from "react";
 import { DepositInfoTable } from "./depositInfo";
 import { Deposit } from "../../../types/Deposit";
-import { set } from "react-hook-form-zod";
 import { months } from "@/types/Months";
 
 interface DepositInfoData {
