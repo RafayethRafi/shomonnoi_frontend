@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function HomaPage() {
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
   const router = useRouter();
   return (
     <ProtectedRoute>
@@ -30,22 +30,35 @@ export default function HomaPage() {
           </Link>
         </div>
 
-        <div>
-          <Link
-            className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 m-5"
-            href="/invite_users"
-          >
-            Invite Users
-          </Link>
-        </div>
-        <div>
-          <Link
-            className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 m-5"
-            href="/registered_users"
-          >
-            Registered Users
-          </Link>
-        </div>
+        {user?.role === "admin" && (
+          <>
+            <div>
+              <Link
+                className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 m-5"
+                href="/invite_users"
+              >
+                Invite Users
+              </Link>
+            </div>
+            <div>
+              <Link
+                className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 m-5"
+                href="/registered_users"
+              >
+                Registered Users
+              </Link>
+            </div>
+
+            <div>
+              <Link
+                className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 m-5"
+                href="/deposit"
+              >
+                Deposit
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </ProtectedRoute>
   );
