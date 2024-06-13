@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import useAuth from "@/lib/hooks/useAuth";
+import { useRouter } from "next/navigation";
 
 interface DepositData {
   name: string;
@@ -32,7 +33,8 @@ const nameList = [
 ];
 
 export default function Deposit() {
-  const { token } = useAuth();
+  const router = useRouter();
+  const { token , logout} = useAuth();
   const api = process.env.NEXT_PUBLIC_API_URL;
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
   const [amounts, setAmounts] = useState<{ [key: string]: number }>({});
@@ -146,6 +148,16 @@ export default function Deposit() {
           )}
         </div>
       )}
+      <button
+          // make the button in the top right corner for mobile
+          className="absolute top-3 right-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => {
+            logout();
+            router.push("/login");
+          }}
+        >
+          logout
+        </button>
     </div>
   );
 }
