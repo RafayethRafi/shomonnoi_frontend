@@ -17,6 +17,7 @@ interface LoginData {
 }
 
 export default function LoginForm() {
+  console.log("hijgfuyiehdrbuijkghnsdrhuire")
   const api = process.env.NEXT_PUBLIC_API_URL;
   const { login, logout } = useAuth();
   const router = useRouter();
