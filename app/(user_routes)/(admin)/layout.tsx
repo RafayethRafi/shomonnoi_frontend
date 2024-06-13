@@ -9,7 +9,7 @@ export default function AdminLayout({
 }) {
   const { user } = useAuth();
   const router = useRouter();
-  if (user?.role !== "admin") {
+  if (user?.username !== "shomonnoi") {
     router.push("/home");
     return null; // or return a "not authorized" message
   }
