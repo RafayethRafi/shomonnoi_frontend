@@ -1,4 +1,5 @@
 "use client";
+export const runtime = "edge";
 
 import React, { use, useEffect, useState } from "react";
 import axios from "axios";
